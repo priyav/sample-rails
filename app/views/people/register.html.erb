@@ -1,0 +1,5 @@
+<%= form_for :user do |f| %>
+<p> Username: <br />  <%= f.text_field :username %></p>
+<p>  Password: <br />  <%= f.password_field :password %></p>
+<p><%= submit_tag "Register" %></p>
+<% end %>

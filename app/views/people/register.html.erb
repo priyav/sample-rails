@@ -1,5 +1,6 @@
-<%= form_for :user do |f| %>
-<p> Username: <br />  <%= f.text_field :username %></p>
-<p>  Password: <br />  <%= f.password_field :password %></p>
+<%= form_for @user, :url => :register do |f| %>
+<p><%= f.label :username %><%= f.text_field :username %><% if @user.errors.has_key? :username %><%= @user.errors[:username] %><% end %></p>
+<p><%= f.label :password %><%= f.password_field :password %></p>
+<p><%= f.label :email %><%= f.email_field :email %></p>
 <p><%= submit_tag "Register" %></p>
 <% end %>

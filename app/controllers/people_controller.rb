@@ -4,12 +4,12 @@ class PeopleController < ApplicationController
   end
   
    def show
-     @xyz = User.where(:username=>params[:username]).first
+     @profile = User.where(:username=>params[:username]).first
    end
    
    def register
+     @user = User.new(params[:user])
      if request.method == "POST"
-       @user = User.new(params[:user])
        redirect_to('/') if @user.save
      end
    end
